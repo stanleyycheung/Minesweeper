@@ -81,8 +81,8 @@ while board.play:
         for row in range(size):
             for col in range(size):
                 pygame.draw.rect(screen, lightgrey, [(margin + cell_len) * col + margin,
-                                                 (margin + cell_len) * row + margin,
-                                                 cell_len, cell_len])
+                                                     (margin + cell_len) * row + margin,
+                                                     cell_len, cell_len])
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -167,7 +167,8 @@ while board.play:
 
                 # draw black strip over bottom text, then redraw remaining bombs text
                 pygame.draw.rect(screen, black, (0, length - cell_len, width, cell_len))
-                make_text('Remaining: {}'.format(board.remaining), width/2, length - cell_len/2, white)
+                make_text('Remaining: {}'.format(board.remaining),
+                          width/2, length - cell_len/2, white)
 
     if board.remaining == 0 and all_opened == size**2 - bombs:
         board.play = False
